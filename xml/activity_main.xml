@@ -18,7 +18,7 @@
         android:backgroundTint="@android:color/transparent"
         android:onClick="albumClick"
         android:scaleType="fitXY"
-        android:src="@drawable/loadPic_btn"
+        android:src="@drawable/loadpic_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 

@@ -4,14 +4,204 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".getPicture">
+    tools:context=".getPicture"
+    android:background="@drawable/background">
+
+
+    <!-- photo area -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/writediary_title" />
+
     <ImageView
         android:id="@+id/user_image"
+        android:layout_width="0dp"
+        android:layout_height="254dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="4"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <!-- day,time & location & content area -->
+    <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:layout_width="wrap_content"
+        android:layout_height="141dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4">
+
+        <!-- input day and time -->
+        <TextView
+            android:id="@+id/day_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:textSize="10pt"
+            android:textStyle="italic" />
+
+        <!-- input location -->
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="위치를 입력하세요."
+            android:textColor="#000000"
+            android:textSize="10pt"
+            android:textStyle="normal" />
+
+        <!-- input context of diary -->
+        <EditText
+            android:id="@+id/context"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="일기를 쓰세요."
+            android:textColor="#000000"
+            android:textSize="10pt"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+    <!-- emotion & whether area -->
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="저장"
-        android:onClick="save"/>
+        android:layout_marginBottom="8dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- select emotion -->
+        <RadioGroup
+            android:id="@+id/emotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/happy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="happy" />
+
+            <RadioButton
+                android:id="@+id/inlove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="inlove" />
+
+            <RadioButton
+                android:id="@+id/smile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="smile" />
+
+            <RadioButton
+                android:id="@+id/thinking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="thinking" />
+
+            <RadioButton
+                android:id="@+id/unhappy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="unhappy" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/emotion_view"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+        <!-- select whether -->
+        <RadioGroup
+            android:id="@+id/whether"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/sunny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="sunny" />
+
+            <RadioButton
+                android:id="@+id/clouds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="clouds" />
+
+            <RadioButton
+                android:id="@+id/rainy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="rainy" />
+
+            <RadioButton
+                android:id="@+id/thunder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="thunder" />
+
+            <RadioButton
+                android:id="@+id/snowflake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="snowflake" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/whether_view"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- save button -->
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:onClick="save"
+        android:scaleType="fitXY"
+        android:src="@drawable/save_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/user_image" />
+
+
 </android.support.constraint.ConstraintLayout>
